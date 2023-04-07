@@ -1,22 +1,36 @@
 {
-  "name":"proxmox",
+  "name": "proxmox-for-node",
   "preferGobal": "false",
   "version": "0.1.0",
   "author": "T. Tarvis",
-  "description": "node.js, asynchronous, proxmox client",
-  "repository": {
-	"type":"git",
-	"url":"https://github.com/ttarvis/node-proxmox"
-   },
-  "engines": {
-	"node": ">=0.10.9"
+  "description": "Proxmox APIv2 implementation for NodeJS",
+  "scripts": {
+    "prepack": "",
+    "build": "tsc",
+    "lint": "eslint .",
+    "clean": "rm -rf lib"
   },
-  "licenses": [
-	{
-	"type":"Artistic 2.0"
-	}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Incode-Laboratories/Proxmox-API-for-Node"
+  },
+  "engines": {
+    "node": ">=0.10.9"
+  },
+  "license": "Artistic-2.0",
+  "main": "lib/proxmox.js",
+  "types": "lib/proxmox.d.ts",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.37.0",
+    "typescript": "^5.0.3"
+  },
+  "maintainers": [
+    "MyristicaFragrans"
   ],
-  "main":"./lib/proxmox.js"
+  "files": [
+    "/lib"
+  ]
 }
-  
-  
