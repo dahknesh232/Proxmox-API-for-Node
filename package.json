@@ -1,11 +1,11 @@
 {
   "name": "proxmox-for-node",
   "preferGobal": "false",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "T. Tarvis",
   "description": "Proxmox APIv2 implementation for NodeJS",
   "scripts": {
-    "prepack": "",
+    "prepack": "tsc",
     "build": "tsc",
     "lint": "eslint .",
     "clean": "rm -rf lib"
