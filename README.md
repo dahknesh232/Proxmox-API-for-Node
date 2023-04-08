@@ -1,33 +1,51 @@
-# Node Proxmox
+# Proxmox API for Node
+![Artistic 2.0 License](https://img.shields.io/github/license/Incode-Laboratories/Proxmox-API-for-Node)
 
-## A node.js client for proxmox. See [Proxmox wiki](http://pve.proxmox.com/wiki/Main_Page)
+<center>
+<img src="marketing/logo.webp" alt="Proxmox.js" />
+</center>
 
-###### [Proxmox API wiki](http://pve.proxmox.com/wiki/Proxmox_VE_API)
-###### [Proxmox API referene](http://pve.proxmox.com/pve2-api-doc/)
+[Proxmox Homepage](https://www.proxmox.com/) — [Proxmox API Wiki](https://pve.proxmox.com/wiki/Proxmox_VE_API) — [Proxmox API Documentation](https://pve.proxmox.com/pve-docs/api-viewer/)
 
-##### Note: Requires cURL because node https module does not correctly transfer custom headers without a signed certificate even if you accept unauthorized
+## Features
+- Typescript support
+- API Token first
+- Easy callbacks
 
-##### Installation
+### Todo
+There are still some things that need to be done. See [Issues](https://github.com/Incode-Laboratories/Proxmox-API-for-Node/issues) for more details.
+- Generate coverage for API endpoints
+- Typescript definitions for endpoint JSON
+- Promise support
+- JSDocs for endpoints
 
-  ```npm install proxmox```
-
+## Installation
+```sh
+yarn add https://github.com/Incode-Laboratories/Proxmox-API-for-Node
+```
 or install from here.
 
-###### Example:
-
-    proxmox = require("proxmox")('user', 'password', 'domain.com');
-
-    proxmox.getClusterStatus(function(err, response){
-	if(err) throw err;
-	else{
-	  data = JSON.parse(response);
-	  console.log(data);
-	}
-    });
+## Example:
+```ts
+import proxmox from "proxmox-for-node";
+const remote = proxmox({
+    endpoint: "https://proxmox.example.com:8006/",
+    api: "root@pam!mytoken=aaaaaaaaa-bbb-cccc-dddd-ef0123456789"
+})
+remote.getClusterStatus((err, response) => {
+    if(err) throw err;
+    else {
+        data = JSON.parse(response);
+        console.log(data);
+    }
+});
+```
 
 Callback is a function of the form ```function(err, response){}```
 data is an object, not a string.
 everything else is a string
+
+## Usage
 
 All returned responses are strings that can be parsed in to JSON as per the API reference.
 
