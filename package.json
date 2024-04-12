@@ -29,7 +29,13 @@
   },
   "maintainers": [
     {
-      "name": "MyristicaFragrans"
+      "name": 
+        "MyristicaFragrans"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "dahknesh232"
     }
   ],
   "files": [
